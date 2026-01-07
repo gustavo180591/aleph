@@ -1,14 +1,17 @@
 {
-  "name": "alef",
+  "name": "alef-monorepo",
+  "private": true,
   "type": "module",
-  "version": "0.0.1",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "dev:web": "pnpm --filter web dev",
+    "dev:api": "pnpm --filter api start:dev",
+    "build": "pnpm -r build",
+    "format": "prettier --write .",
+    "lint": "eslint ."
   },
-  "dependencies": {
-    "astro": "^5.16.6"
-  }
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.10.0"
 }
